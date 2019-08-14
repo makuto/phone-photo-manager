@@ -1,0 +1,22 @@
+* Phone Photo Manager
+Server-side management of photos. Intended to replace the core functionality of Google Photos:
+- Delete oldest files once phone Photos folder reaches a configurable size
+- Make sure photos are in server-side archive before removing from phone
+- Browse archived photos from any computer
+- Keep photo on phone explicitly (regardless of file age)
+
+** Network
+I'm using [[https://syncthing.net][Syncthing]] to get files to/from my phone's Photo folder. The network looks like this:
+
+| Device        | Folder       | Purpose                                                                                          |
+|---------------+--------------+--------------------------------------------------------------------------------------------------|
+| Phone         | Photos       | New photos saved here by the camera. Sync both ways so that servers can remove photos easily     |
+| Amazon Server | Photos       | Direct sync with Phone Photos. Server controls which photos are on phone by changing this folder |
+|               | Archive      | Photos folder is synced via ~rync~ to the archive. Nothing is ever removed from the Archive      |
+| Home Pi       | Photos       | Redundant Photos sync (all devices sync to each other)                                           |
+|               | Archive      | Redundant Archive. Phone can download from Pi or Amazon servers                                  |
+|               | Cold Storage | Because Amazon is limited in space, only keep the full collection of photos on the Pi            |
+
+** Setup
+
+You will need to set up Syncthing (or some other file sync service) to suit your requirements.
