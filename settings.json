@@ -1,0 +1,12 @@
+[
+    {
+        "folder": "folder/to/clean",
+        "archive": "archive/to/compare",
+        "maxSizeGiB": 1.5
+    },
+    {
+        "folder": "another/folder/to/clean",
+        "archive": "another/archive/to/compare",
+        "maxSizeGiB": 5
+    }
+]
