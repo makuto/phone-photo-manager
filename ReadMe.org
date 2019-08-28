@@ -11,8 +11,8 @@ I'm using [[https://syncthing.net][Syncthing]] to get files to/from my phone's P
 | Device        | Folder       | Purpose                                                                                                                          |
 |---------------+--------------+----------------------------------------------------------------------------------------------------------------------------------|
 | Phone         | Photos       | New photos saved here by the camera. Sync both ways so that servers can remove photos easily                                     |
-| Amazon Server | Photos       | Direct sync with Phone Photos. Server controls which photos are on phone by changing this folder                                 |
-|               | Archive      | Photos folder is synced via ~rync~ to the archive                                                                                |
+| Amazon Server | Photos       | Direct sync with Phone Photos. Pi Server controls which photos are on phone by changing this folder                              |
+|               | Archive      | Photos folder is synced via ~rsync~ to the archive                                                                               |
 | Home Pi       | Photos       | Redundant Photos sync (all devices sync to each other)                                                                           |
 |               | Archive      | Redundant Archive. Phone can download from Pi or Amazon servers                                                                  |
 |               | Cold Storage | Because Amazon is limited in space, only keep the full collection of photos on the Pi. Nothing is ever removed from Cold Storage |
